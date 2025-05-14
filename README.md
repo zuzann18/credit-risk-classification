@@ -53,9 +53,9 @@ This project provides a comprehensive machine learning solution for predicting l
 - **Key Features:** Debt-to-Income Ratio, Age of Oldest Credit Line, Delinquencies, Major Derogatory Reports
 - **Interpretability:** SHAP analysis supports explainable AI for regulatory compliance and customer transparency
 ### F1 Macro Score
-- ![image](https://github.com/user-attachments/assets/1f3b8673-f63c-4f38-bd2e-6327dc3f93c2)
+ ![image](https://github.com/user-attachments/assets/1f3b8673-f63c-4f38-bd2e-6327dc3f93c2)
 
-- ### Recommendation: XGBoost over Random Forest
+### Recommendation: XGBoost over Random Forest
 
 * **F1 Score (Default Class)**: XGBoost = 0.82 vs. RF = 0.76
 * **ROC AUC**: XGBoost = 0.961 vs. RF = 0.952
@@ -66,8 +66,8 @@ This project provides a comprehensive machine learning solution for predicting l
 
 **Conclusion**: Both models are strong, but **XGBoost is preferred** for deployment due to better performance and generalization.
 - ## Evaluation of the Best Model: ROC-AUC and Confusion Matrix
-- ![image](https://github.com/user-attachments/assets/92ae3655-44db-495e-ae61-157afc902031)
-- ![image](https://github.com/user-attachments/assets/fb13f404-343d-447c-8bae-818c1d14e964)
+ ![image](https://github.com/user-attachments/assets/92ae3655-44db-495e-ae61-157afc902031)
+ ![image](https://github.com/user-attachments/assets/fb13f404-343d-447c-8bae-818c1d14e964)
 
   ##  Most Predictive Variables of Loan Default
 - Based on SHAP value analysis and confirmed by reduced-feature model performance:
@@ -80,7 +80,7 @@ This project provides a comprehensive machine learning solution for predicting l
 
 These features alone retained strong model performance when used with a tuned XGBoost classifier.
 
-- **Generalizability**:
+**Generalizability**:
   - Validated with stratified k-fold cross-validation and robust ROC AUC stability.
   - Reduced-feature models maintain effectiveness, even with fewer inputs – a sign of good generalization.
 
