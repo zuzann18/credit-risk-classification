@@ -105,6 +105,54 @@ To ensure model selection is not only based on performance metrics but also on s
 **Conclusion**: Both models are strong, but **XGBoost is preferred** for deployment due to better performance and generalization.
  ## Evaluation of the Best Model: ROC-AUC and Confusion Matrix
  ![image](https://github.com/user-attachments/assets/92ae3655-44db-495e-ae61-157afc902031)
+
+ Here’s a ready-to-paste section you can add to your **README.md** (under "Evaluation of the Best Model" or "Results") to describe and interpret the ROC curve and confusion matrix for **XGBoost**:
+
+---
+
+## Evaluation of the Best Model – XGBoost (ROC Curve & Confusion Matrix)
+
+![ROC and Confusion Matrix](./548aa545-faad-4f41-b8fa-5170ae271630.png)
+
+### **Left: ROC Curve**
+
+* The **ROC Curve** (Receiver Operating Characteristic) shows the trade-off between the **true positive rate** (recall) and the **false positive rate** at various threshold settings.
+* The **AUC (Area Under Curve)** is **0.97**, indicating excellent model performance.
+* AUC values close to 1.0 suggest that the model effectively distinguishes between defaulters and non-defaulters.
+* The ROC curve rapidly rises to the top-left corner, which reflects high sensitivity and low false positive rates.
+
+> **Interpretation**: The XGBoost model has strong discriminative power and maintains high recall while minimizing false alarms.
+
+---
+
+### **Right: Confusion Matrix**
+
+* The confusion matrix provides a breakdown of predictions on the test set:
+
+  * **True Negatives (TN)**: 1409
+  * **False Positives (FP)**: 22
+  * **False Negatives (FN)**: 59
+  * **True Positives (TP)**: 298
+
+* **Recall (Sensitivity)** for defaulters:
+
+  $$
+  \frac{TP}{TP + FN} = \frac{298}{298 + 59} \approx 0.83
+  $$
+
+* **Precision** for defaulters:
+
+  $$
+  \frac{TP}{TP + FP} = \frac{298}{298 + 22} \approx 0.93
+  $$
+
+> **Interpretation**:
+> The model correctly identifies the majority of defaulters while keeping the false positive rate low. This balance is critical in loan approval scenarios, where minimizing false negatives reduces financial risk.
+
+---
+
+Let me know if you'd like to add the raw metric values (like F1-score, accuracy) below the matrix or include a threshold analysis.
+
   ##  Most Predictive Variables of Loan Default
  ![image](https://github.com/user-attachments/assets/fb13f404-343d-447c-8bae-818c1d14e964)
 
