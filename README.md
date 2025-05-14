@@ -1,5 +1,5 @@
 
-# Loan Default Prediction: End-to-End ML Pipeline
+# Loan Default Prediction: 
 
 This project provides a comprehensive machine learning solution for predicting loan defaults, using the HMEQ (Home Equity) dataset. The goal is to help banks and financial institutions automate, optimize, and explain credit risk decisions, replacing manual, error-prone processes with robust, interpretable ML models.
 
