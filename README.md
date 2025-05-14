@@ -40,15 +40,15 @@ This project provides a comprehensive machine learning solution for predicting l
 ### **Data Imputation Techniques**
 ##  IterativeImputer (MICE), Random sampling
 
--MICE (Multiple Imputation by Chained Equations) was considered to *improve the reliability of missing value treatment by modeling each feature with missing data as a function of the others.*
+- MICE (Multiple Imputation by Chained Equations) was considered to *improve the reliability of missing value treatment by modeling each feature with missing data as a function of the others.*
 
--*Implementation*: IterativeImputer(estimator=BayesianRidge, max_iter=10, random_state=42)
+- *Implementation*: IterativeImputer(estimator=BayesianRidge, max_iter=10, random_state=42)
 
--Applied to: LOAN, MORTDUE, VALUE, YOJ, DEROG, DELINQ, CLAGE, NINQ, CLNO, DEBTINC
+- Applied to: LOAN, MORTDUE, VALUE, YOJ, DEROG, DELINQ, CLAGE, NINQ, CLNO, DEBTINC
 
 ### Handling Missing Values for Nominal Unordered Variables (JOB, REASON) - Random Sampling
 
--For nominal unordered categorical variables such as REASON and JOB, missing values were imputed using random sampling based on observed probability distributions. This preserved the original distribution of categories and prevented over-representation of the mode.
+- For nominal unordered categorical variables such as REASON and JOB, missing values were imputed using random sampling based on observed probability distributions. This preserved the original distribution of categories and prevented over-representation of the mode.
 
 
 
