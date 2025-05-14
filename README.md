@@ -134,9 +134,7 @@ To ensure model selection is not only based on performance metrics but also on s
 
 * **Recall (Sensitivity)** for defaulters:
 
-  $$
-  \frac{TP}{TP + FN} = \frac{298}{298 + 59} \approx 0.83
-  $$
+  $\frac{TP}{TP + FN} = \frac{298}{298 + 59} \approx 0.83$
 
 * **Precision** for defaulters:  
   $\frac{TP}{TP + FP} = \frac{298}{298 + 22} \approx 0.93$
