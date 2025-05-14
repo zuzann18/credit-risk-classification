@@ -65,11 +65,11 @@ This project provides a comprehensive machine learning solution for predicting l
 * **Efficiency**: XGBoost (`tree_method='hist'`) is faster and scales better
 
 **Conclusion**: Both models are strong, but **XGBoost is preferred** for deployment due to better performance and generalization.
-- ## Evaluation of the Best Model: ROC-AUC and Confusion Matrix
+ ## Evaluation of the Best Model: ROC-AUC and Confusion Matrix
  ![image](https://github.com/user-attachments/assets/92ae3655-44db-495e-ae61-157afc902031)
+  ##  Most Predictive Variables of Loan Default
  ![image](https://github.com/user-attachments/assets/fb13f404-343d-447c-8bae-818c1d14e964)
 
-  ##  Most Predictive Variables of Loan Default
 - Based on SHAP value analysis and confirmed by reduced-feature model performance:
 
 - **DEBTINC** *(Debt-to-Income Ratio)* – Strongest predictor of default risk.
