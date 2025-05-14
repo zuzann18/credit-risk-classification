@@ -52,3 +52,10 @@ This project provides a comprehensive machine learning solution for predicting l
 - **Best Model:** XGBoost (ROC-AUC ≈ 0.96, high F1-score, best at reducing false negatives)
 - **Key Features:** Debt-to-Income Ratio, Age of Oldest Credit Line, Delinquencies, Major Derogatory Reports
 - **Interpretability:** SHAP analysis supports explainable AI for regulatory compliance and customer transparency
+
+- ![image](https://github.com/user-attachments/assets/1f3b8673-f63c-4f38-bd2e-6327dc3f93c2)
+- ![image](https://github.com/user-attachments/assets/92ae3655-44db-495e-ae61-157afc902031)
+- ![image](https://github.com/user-attachments/assets/fb13f404-343d-447c-8bae-818c1d14e964)
+
+
+
