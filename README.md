@@ -36,22 +36,20 @@ This project provides a comprehensive machine learning solution for predicting l
 - **Evaluation:**  
   - Cross-validated model comparison (ROC-AUC, F1, precision, recall, confusion matrices)
   - Statistical tests to ensure robust model selection
-  - 
+    
 ### **Data Imputation Techniques**
 ##  IterativeImputer (MICE), Random sampling
-MICE (Multiple Imputation by Chained Equations) was considered to improve the reliability of missing value treatment by modeling each feature with missing data as a function of the others. 
-Implementation: IterativeImputer(estimator=BayesianRidge, max_iter=10, random_state=42)
-Applied to: LOAN, MORTDUE, VALUE, YOJ, DEROG, DELINQ, CLAGE, NINQ, CLNO, DEBTINC
+
+-MICE (Multiple Imputation by Chained Equations) was considered to *improve the reliability of missing value treatment by modeling each feature with missing data as a function of the others.*
+
+-*Implementation*: IterativeImputer(estimator=BayesianRidge, max_iter=10, random_state=42)
+
+-Applied to: LOAN, MORTDUE, VALUE, YOJ, DEROG, DELINQ, CLAGE, NINQ, CLNO, DEBTINC
 
 ### Handling Missing Values for Nominal Unordered Variables (JOB, REASON) - Random Sampling
 
-For nominal unordered categorical variables such as REASON and JOB, missing values were imputed using random sampling based on observed probability distributions. This preserved the original distribution of categories and prevented over-representation of the mode.
+-For nominal unordered categorical variables such as REASON and JOB, missing values were imputed using random sampling based on observed probability distributions. This preserved the original distribution of categories and prevented over-representation of the mode.
 
-probs = df['REASON'].value_counts(normalize=True)
-mask_nan = df['REASON'].isna()
-n_nan = mask_nan.sum()
-draws = np.random.choice(probs.index, size=n_nan, p=probs.values)
-df.loc[mask_nan, 'REASON'] = draws
 
 
 ### **Statistical Evaluation and Model Comparison**
