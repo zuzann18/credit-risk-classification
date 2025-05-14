@@ -106,8 +106,6 @@ To ensure model selection is not only based on performance metrics but also on s
  ## Evaluation of the Best Model: ROC-AUC and Confusion Matrix
  ![image](https://github.com/user-attachments/assets/92ae3655-44db-495e-ae61-157afc902031)
 
- Here’s a ready-to-paste section you can add to your **README.md** (under "Evaluation of the Best Model" or "Results") to describe and interpret the ROC curve and confusion matrix for **XGBoost**:
-
 ---
 
 ## Evaluation of the Best Model – XGBoost (ROC Curve & Confusion Matrix)
@@ -152,8 +150,6 @@ To ensure model selection is not only based on performance metrics but also on s
 > The model correctly identifies the majority of defaulters while keeping the false positive rate low. This balance is critical in loan approval scenarios, where minimizing false negatives reduces financial risk.
 
 ---
-
-Let me know if you'd like to add the raw metric values (like F1-score, accuracy) below the matrix or include a threshold analysis.
 
   ##  Most Predictive Variables of Loan Default
  ![image](https://github.com/user-attachments/assets/fb13f404-343d-447c-8bae-818c1d14e964)
