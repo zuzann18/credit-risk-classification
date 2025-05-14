@@ -39,8 +39,13 @@ This project provides a comprehensive machine learning solution for predicting l
   - 
 ### **Data Imputation Techniques**
 ##  IterativeImputer (MICE), Random sampling
+MICE (Multiple Imputation by Chained Equations) was considered to improve the reliability of missing value treatment by modeling each feature with missing data as a function of the others. 
+Implementation: IterativeImputer(estimator=BayesianRidge, max_iter=10, random_state=42)
+Applied to: LOAN, MORTDUE, VALUE, YOJ, DEROG, DELINQ, CLAGE, NINQ, CLNO, DEBTINC
 
 ### Handling Missing Values for Nominal Unordered Variables (JOB, REASON) - Random Sampling
+
+For nominal unordered categorical variables such as REASON and JOB, missing values were imputed using random sampling based on observed probability distributions. This preserved the original distribution of categories and prevented over-representation of the mode.
 
 probs = df['REASON'].value_counts(normalize=True)
 mask_nan = df['REASON'].isna()
@@ -48,13 +53,6 @@ n_nan = mask_nan.sum()
 draws = np.random.choice(probs.index, size=n_nan, p=probs.values)
 df.loc[mask_nan, 'REASON'] = draws
 
-* **Numerical Variables**:
-  Missing values were imputed using the **median** of each feature.
-  *Justification*: The median is robust against outliers and skewed distributions, which are common in financial data (e.g., loan amounts, mortgage due). This approach preserves the central tendency without being influenced by extreme values.
-
-* **Categorical Variables**:
-  Missing values were filled with the **mode** (most frequent category).
-  *Justification*: This ensures that the imputed category is a likely and valid option, maintaining the overall distribution of the feature without introducing bias or noise.
 
 ### **Statistical Evaluation and Model Comparison**
 
