@@ -36,6 +36,47 @@ This project provides a comprehensive machine learning solution for predicting l
 - **Evaluation:**  
   - Cross-validated model comparison (ROC-AUC, F1, precision, recall, confusion matrices)
   - Statistical tests to ensure robust model selection
+  - 
+### **Data Imputation Techniques**
+##  IterativeImputer (MICE), Random sampling
+
+### Handling Missing Values for Nominal Unordered Variables (JOB, REASON) - Random Sampling
+
+probs = df['REASON'].value_counts(normalize=True)
+mask_nan = df['REASON'].isna()
+n_nan = mask_nan.sum()
+draws = np.random.choice(probs.index, size=n_nan, p=probs.values)
+df.loc[mask_nan, 'REASON'] = draws
+
+* **Numerical Variables**:
+  Missing values were imputed using the **median** of each feature.
+  *Justification*: The median is robust against outliers and skewed distributions, which are common in financial data (e.g., loan amounts, mortgage due). This approach preserves the central tendency without being influenced by extreme values.
+
+* **Categorical Variables**:
+  Missing values were filled with the **mode** (most frequent category).
+  *Justification*: This ensures that the imputed category is a likely and valid option, maintaining the overall distribution of the feature without introducing bias or noise.
+
+### **Statistical Evaluation and Model Comparison**
+
+To ensure model selection is not only based on performance metrics but also on statistical robustness, the following methodologies were implemented:
+
+* **Cross-Validation**:
+  Used **Stratified K-Fold (k=5)** cross-validation to maintain class balance across folds. The **F1 Macro score** was used as the optimization metric to balance performance across both default and non-default classes.
+
+* **Model Selection Metrics**:
+
+  * **ROC-AUC**: Assesses overall classification ability across thresholds.
+  * **F1 Score**: Evaluated globally (macro) and specifically for the minority class (`BAD = 1`), to balance precision and recall.
+  * **Precision & Recall**: Critical for business impact—especially minimizing **false negatives**.
+
+* **Statistical Significance Testing**:
+
+  * **Wilcoxon Signed-Rank Test** and **Student’s t-Test**: For pairwise comparison of model scores across folds.
+  * **Kruskal-Wallis Test**: To test performance differences across all models in a non-parametric framework.
+  * **McNemar’s Test**: To compare error distributions between two classifiers.
+  * **Cochran’s Q Test**: To assess consistency of classifier predictions across multiple models.
+
+*Outcome*: These tests confirmed that while XGBoost and Random Forest performed similarly, **XGBoost demonstrated marginally better generalization** and model consistency. The **difference was statistically supported by McNemar’s and Cochran’s Q tests**, validating its recommendation for deployment.
 
 - **Interpretability:**  
   - SHAP (SHapley Additive exPlanations) for feature importance and transparent decisions
@@ -44,6 +85,7 @@ This project provides a comprehensive machine learning solution for predicting l
 - **Deployment-Readiness:**  
   - Save/load full preprocessing + model pipeline  
   - Notebook-based documentation suitable for stakeholders
+
 
 ---
 
