@@ -143,8 +143,7 @@ To ensure model selection is not only based on performance metrics but also on s
 * **Precision** for defaulters:
 
   $$
-  \frac{TP}{TP + FP} = \frac{298}{298 + 22} \approx 0.93
-  $$
+  \frac{TP}{TP + FP} = \frac{298}{298 + 22} \approx 0.93 $$
 
 > **Interpretation**:
 > The model correctly identifies the majority of defaulters while keeping the false positive rate low. This balance is critical in loan approval scenarios, where minimizing false negatives reduces financial risk.
